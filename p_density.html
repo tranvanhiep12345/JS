@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra mật độ dân số</title>
+    </head>
+     <body>
+        <label for="so-dan">Số dân:</label><br>
+        <input type="number" id="so-dan"><br>
+        <label for="dien-tich">Diện tích (km²):</label><br>
+        <input type="number" id="dien-tich">
+        <br><br>
+        <button onclick="tinhMatdodanso()">Tính mật độ dân số:</button>
+        <br><br>
+        <p id="ket-qua">Kết quả:</p>
+    <script>   
+    function tinhMatdodanso(){
+        var soDan = parseInt(document.getElementById("so-dan").value);
+        var dienTich = parseInt(document.getElementById("dien-tich").value);
+        var matDoDanSo = soDan / dienTich;
+        if (matDoDanSo > 1000) {
+          document.getElementById("ket-qua").innerHTML = "Khu vực này quá đông đúc";
+        } else {
+          document.getElementById("ket-qua").innerHTML = "Khu vực này không quá đông đúc";
+        }
+    }
+    </script> 
+    </body>
+</html>
