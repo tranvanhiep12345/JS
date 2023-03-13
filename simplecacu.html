@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính</title>
+  </head>
+  <body>
+    <style>
+        button {
+            width: 30px;
+            height: 30px;
+        }       
+    </style>
+   <div class="thang">
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="text" id="view">
+            </td>
+        </tr>
+        <tbody><tr>
+            <td><button type="button" name="btn" value="1" onclick="inputValue(this.value)"> 1 </button></td>
+            <td><button type="button" name="btn" value="2" onclick="inputValue(this.value)"> 2 </button></td>
+            <td><button type="button" name="btn" value="3" onclick="inputValue(this.value)"> 3 </button></td>
+            <td><button type="button" name="op" value="+" onclick="inputValue(this.value)"> + </button></td>
+        </tr>
+      
+        <tr>
+            <td><button type="button" name="btn" value="4" onclick="inputValue(this.value)"> 4 </button></td>
+            <td><button type="button" name="btn" value="5" onclick="inputValue(this.value)"> 5 </button></td>
+            <td><button type="button" name="btn" value="6" onclick="inputValue(this.value)"> 6 </button></td>
+            <td><button type="button" name="op" value="-" onclick="inputValue(this.value)"> - </button></td>
+        </tr>
+        <tr>
+            <td><button type="button" name="btn" value="7" onclick="inputValue(this.value)"> 7 </button></td>
+            <td><button type="button" name="btn" value="8" onclick="inputValue(this.value)"> 8 </button></td>
+            <td><button type="button" name="btn" value="9" onclick="inputValue(this.value)"> 9</button></td>
+            <td><button type="button" name="op" value="*" onclick="inputValue(this.value)"> * </button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="deleteValue();"> AC </button></td>
+            <td><button type="button" name="btn" onclick="inputValue(this.value)"> 0 </button></td>
+            <td><button name="reusult" onclick="result();"> = </button></td>
+            <td><button type="button" name="op" value="/" onclick="inputValue(this.value)"> / </button></td>
+        </tr>
+    </tbody></table>
+    
+</div>
+<script>
+    function inputValue(value){
+        let input = document.getElementById("view").value
+        let newString = input + value
+        console.log(newString)
+        // console.log(newString)
+        document.getElementById("view").value = newString
+    }
+    function result(){
+        let input = document.getElementById("view").value
+        let result = eval(input)
+        document.getElementById("view").value = result
+    }
+    function deleteValue(){
+        document.getElementById('view').value = ""
+    }      
+  </script>
+  </body>
+</html>
